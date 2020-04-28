@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl,Validators } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'my-app',
@@ -8,20 +8,12 @@ import { FormGroup, FormControl,Validators } from '@angular/forms';
 })
 export class AppComponent  {
   name = 'Angular';
-  emailid;
-  formdata;
-  ngOnInit(){
 
-    this.formdata=new FormGroup({
-      emailid:new FormControl("",Validators.compose([
-Validators.required,
-Validators.pattern("[^@]*@[^@]*")
+cols:number=3;
 
-
-      ])),
-      passwd:new FormControl("")
-    });
-  }
   onClickSubmit(data){
-    this.emailid = data.emailid;}
+
+alert("Entered Email id : " + data.emailid); 
+
+  }
 }
